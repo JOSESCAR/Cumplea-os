@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>¡Feliz Cumpleaños Kerdam!</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    /* RESET y fondo festivo */
+    /* Estilos generales */
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       background: linear-gradient(135deg,#ffe6f0,#ffb3d9);
@@ -26,115 +26,254 @@
       animation:glow 3s ease-in-out infinite alternate;
     }
     @keyframes glow {
-      0%{ text-shadow:0 2px 8px rgba(255,127,155,0.7); }
-      100%{ text-shadow:0 2px 12px rgba(255,127,155,1); }
+      0%{text-shadow:0 2px 8px rgba(255,127,155,0.7);}
+      100%{text-shadow:0 2px 12px rgba(255,127,155,1);}
     }
 
-    /* Globos flotantes */
-    .balloon-wall { display:flex; gap:14px; margin-bottom:40px; justify-content:center; }
-    .balloon-letter { position:relative; width:60px;height:80px;animation:float 4s ease-in-out infinite; }
-    .balloon-letter:nth-child(odd){animation-delay:-1s;}
-    @keyframes float {0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);} }
-    .balloon{
-      width:100%;height:100%;
+    /* Globos */
+    .balloon-wall {
+      display:flex; gap:14px; justify-content:center; margin-bottom:40px;
+    }
+    .balloon-letter {
+      position:relative; width:60px; height:80px;
+      animation:float 4s ease-in-out infinite;
+    }
+    .balloon-letter:nth-child(odd){ animation-delay:-1s; }
+    @keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);} }
+    .balloon {
+      width:100%; height:100%;
       background:linear-gradient(135deg,#ff91b8,#ff4f7b);
       border-radius:50% 50% 48% 48%/60% 60% 45% 45%;
-      display:flex;align-items:center;justify-content:center;
+      display:flex; align-items:center; justify-content:center;
       color:white;font-weight:600;font-size:1.2rem;
-      position:absolute;top:0;left:0;
+      position:absolute; top:0; left:0;
       box-shadow:inset -6px -8px 12px rgba(0,0,0,0.2),0 4px 6px rgba(0,0,0,0.15);
     }
-    .balloon::after{
-      content:'';position:absolute;bottom:-25px;left:50%;
-      width:3px;height:25px;background:#555;transform:translateX(-50%);
+    .balloon::after {
+      content:''; position:absolute; bottom:-25px; left:50%;
+      width:3px; height:25px; background:#555;
+      transform:translateX(-50%);
     }
 
-    /* Pastel y mesa */
-    .scene{position:relative;width:320px;margin:auto;margin-bottom:40px;}
-    .table{
-      width:100%;height:60px;background:#8b4513;border-radius:16px;
-      position:relative;box-shadow:0 6px 12px rgba(0,0,0,0.2);
+    /* Mesa y pastel */
+    .scene {
+      position:relative; width:320px; margin:auto; margin-bottom:40px;
     }
-    .table-leg{position:absolute;bottom:-40px;width:16px;height:40px;background:#6a2e0c;border-radius:8px;}
-    .table-leg:first-child{left:24px;} .table-leg:last-child{right:24px;}
-    .cake{
-      width:120px;height:60px;background:#ffeaa7;border-radius:12px;
-      position:absolute;top:-50px;left:50%;transform:translateX(-50%);
+    .table {
+      width:100%; height:60px; background:#8b4513;
+      border-radius:16px; position:relative;
+      box-shadow:0 6px 12px rgba(0,0,0,0.2);
+    }
+    .table-leg {
+      position:absolute; bottom:-40px; width:16px; height:40px;
+      background:#6a2e0c; border-radius:8px;
+    }
+    .table-leg:first-child { left:24px; } .table-leg:last-child { right:24px; }
+    .cake {
+      width:120px; height:60px; background:#ffeaa7;
+      border-radius:12px; position:absolute;
+      top:-50px; left:50%; transform:translateX(-50%);
       box-shadow:inset 0 -3px 8px rgba(0,0,0,0.15),0 4px 6px rgba(0,0,0,0.1);
       animation:cake-glow 4s ease-in-out infinite alternate;
     }
-    @keyframes cake-glow{0%{box-shadow:inset 0 -3px 8px rgba(0,0,0,0.15),0 4px 6px rgba(0,0,0,0.1);}100%{box-shadow:inset 0 -3px 8px rgba(0,0,0,0.15),0 4px 10px rgba(0,0,0,0.2);}}
-    .candles{position:absolute;top:-22px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
-    .candle{width:6px;height:18px;background:#ff6b6b;position:relative;border-radius:3px;}
-    .flame{
-      width:6px;height:10px;
-      background:radial-gradient(ellipse,#ffeb3b 0%,#ff9800 80%);
-      border-radius:50%;position:absolute;top:-10px;left:50%;transform:translateX(-50%);
-      animation:flame 0.8s infinite alternate;box-shadow:0 0 6px rgba(255,235,59,0.8);
+    @keyframes cake-glow {
+      0%{box-shadow:inset 0 -3px 8px rgba(0,0,0,0.15),0 4px 6px rgba(0,0,0,0.1);}
+      100%{box-shadow:inset 0 -3px 8px rgba(0,0,0,0.15),0 4px 10px rgba(0,0,0,0.2);}
     }
-    @keyframes flame{0%{transform:translateX(-50%) scale(.9);}100%{transform:translateX(-50%) scale(1.1);}}
+    .candles {
+      position:absolute; top:-22px; left:50%;
+      transform:translateX(-50%); display:flex; gap:6px;
+    }
+    .candle {
+      width:6px; height:18px; background:#ff6b6b;
+      position:relative; border-radius:3px;
+    }
+    .flame {
+      width:6px; height:10px;
+      background:radial-gradient(ellipse,#ffeb3b 0%,#ff9800 80%);
+      border-radius:50%; position:absolute;
+      top:-10px; left:50%; transform:translateX(-50%);
+      animation:flame 0.8s infinite alternate;
+      box-shadow:0 0 6px rgba(255,235,59,0.8);
+    }
+    @keyframes flame {
+      0%{transform:translateX(-50%) scale(.9);}100%{transform:translateX(-50%) scale(1.1);}
+    }
 
-    /* Perros detallados */
-    .characters{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
-    .figure{position:relative;width:60px;}
-    .dog{position:relative;animation:bounce 3s ease-in-out infinite alternate;}
-    @keyframes bounce{0%{transform:translateY(0);}100%{transform:translateY(-5px);}}
-    .dog-head{width:42px;height:42px;background:#ccc;border-radius:50%;margin:auto;position:relative;box-shadow:inset -2px -2px 6px rgba(0,0,0,0.1);}
-    .dog.black .dog-head{background:#444;} .dog.white .dog-head{background:#eee;}
-    .dog-ears{position:absolute;width:12px;height:18px;background:inherit;top:-6px;border-radius:50%;}
-    .dog-ears.left{left:-10px;transform:rotate(-15deg);} .dog-ears.right{right:-10px;transform:rotate(15deg);}
-    .dog-eyes{position:absolute;top:16px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
-    .dog-eyes .eye{width:6px;height:6px;background:#000;border-radius:50%;position:relative;}
-    .dog-eyes .eye::after{content:'';position:absolute;top:1px;left:1px;width:2px;height:2px;background:white;border-radius:50%;}
-    .dog-snout{width:16px;height:10px;background:#aaa;border-radius:8px;position:absolute;bottom:8px;left:50%;transform:translateX(-50%);box-shadow:inset 0 2px 4px rgba(0,0,0,0.2);}
-    .dog.black .dog-snout{background:#666;} .dog.white .dog-snout{background:#ccc;}
-    .dog-nose{width:4px;height:4px;background:#222;border-radius:50%;margin:2px auto 0;}
-    .dog-body{width:48px;height:40px;background:#ccc;border-radius:24px;margin:-6px auto 0;position:relative;}
-    .dog.black .dog-body{background:#444;} .dog.white .dog-body{background:#eee;}
-    .dog-tail{position:absolute;right:-6px;top:10px;width:5px;height:25px;background:inherit;border-radius:10px;transform-origin:bottom center;animation:wag .5s infinite alternate;}
-    @keyframes wag{0%{transform:rotate(10deg);}100%{transform:rotate(-10deg);}}
-    .dog-paws{position:absolute;bottom:-8px;width:100%;display:flex;justify-content:space-between;padding:0 6px;}
-    .paw{width:8px;height:6px;background:#888;border-radius:50%;}
-    .dog.black .paw{background:#333;} .dog.white .paw{background:#bbb;}
+    /* Personajes */
+    .characters {
+      display:flex; justify-content:center; gap:40px; flex-wrap:wrap;
+    }
+    .figure { position:relative; width:60px; }
 
-    /* Chica con detalle */
-    .girl-head{width:55px;height:55px;background:#fcd5b5;border-radius:50%;margin:auto;position:relative;box-shadow:inset -3px -3px 6px rgba(0,0,0,0.1);}
-    .hair{position:absolute;top:0;left:0;width:55px;height:30px;background:#6a4232;border-radius:50% 50% 40% 40%;}
-    .girl-eyes{position:absolute;top:24px;left:50%;transform:translateX(-50%);display:flex;gap:12px;}
-    .girl-eyes .eye{width:6px;height:6px;background:#333;border-radius:50%;}
-    .smile{position:absolute;bottom:12px;left:50%;width:14px;height:8px;border-bottom:2px solid #333;border-radius:0 0 10px 10px;transform:translateX(-50%);}
-    .girl-body{width:40px;height:80px;background:#ff9ff3;border-radius:12px 12px 8px 8px;margin:4px auto 0;position:relative;}
-    .arm{position:absolute;width:8px;height:30px;background:#fcd5b5;top:10px;border-radius:4px;}
-    .arm.left{left:-8px;animation:wave 2s ease-in-out infinite alternate;} .arm.right{right:-8px;}
-    @keyframes wave{0%{transform:rotate(0);}100%{transform:rotate(20deg);}}
-    .leg{position:absolute;bottom:-20px;width:8px;height:30px;background:#5a95ff;border-radius:4px;}
-    .leg.left{left:6px;} .leg.right{right:6px;}
+    .dog {
+      position:relative; animation:bounce 3s ease-in-out infinite alternate;
+    }
+    @keyframes bounce {
+      0%{transform:translateY(0);}100%{transform:translateY(-5px);}
+    }
+    .dog-head {
+      width:42px; height:42px; background:#ccc;
+      border-radius:50%; margin:auto; position:relative;
+      box-shadow:inset -2px -2px 6px rgba(0,0,0,0.1);
+    }
+    .dog.black .dog-head { background:#444; }
+    .dog.white .dog-head { background:#eee; }
+    .dog-ears {
+      position:absolute; width:12px; height:18px; background:inherit;
+      top:-6px; border-radius:50%;
+    }
+    .dog-ears.left { left:-10px; transform:rotate(-15deg); }
+    .dog-ears.right { right:-10px; transform:rotate(15deg); }
+    .dog-eyes {
+      position:absolute; top:16px; left:50%; transform:translateX(-50%);
+      display:flex; gap:6px;
+    }
+    .dog-eyes .eye {
+      width:6px; height:6px; background:#000;
+      border-radius:50%; position:relative;
+    }
+    .dog-eyes .eye::after {
+      content:''; position:absolute; top:1px; left:1px;
+      width:2px; height:2px; background:white; border-radius:50%;
+    }
+    .dog-snout {
+      width:16px; height:10px; background:#aaa;
+      border-radius:8px; position:absolute;
+      bottom:8px; left:50%; transform:translateX(-50%);
+      box-shadow:inset 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .dog.black .dog-snout { background:#666; }
+    .dog.white .dog-snout { background:#ccc; }
+    .dog-nose {
+      width:4px; height:4px; background:#222;
+      border-radius:50%; margin:2px auto 0;
+    }
+    .dog-body {
+      width:48px; height:40px; background:#ccc;
+      border-radius:24px; margin:-6px auto 0;
+      position:relative;
+    }
+    .dog.black .dog-body { background:#444; }
+    .dog.white .dog-body { background:#eee; }
+    .dog-tail {
+      position:absolute; right:-6px; top:10px;
+      width:5px; height:25px; background:inherit;
+      border-radius:10px; transform-origin:bottom center;
+      animation:wag .5s infinite alternate;
+    }
+    @keyframes wag {
+      0%{transform:rotate(10deg);}100%{transform:rotate(-10deg);}
+    }
+    .dog-paws {
+      position:absolute; bottom:-8px; width:100%;
+      display:flex; justify-content:space-between; padding:0 6px;
+    }
+    .paw {
+      width:8px; height:6px; background:#888; border-radius:50%;
+    }
+    .dog.black .paw { background:#333; }
+    .dog.white .paw { background:#bbb; }
 
-    /* Diseño de galería */
-    .gallery{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
-    .gallery-item{width:80px;height:80px;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);animation:pop .6s ease-in-out;}
-    @keyframes pop{0%{transform:scale(.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+    .girl-head {
+      width:55px; height:55px; background:#fcd5b5;
+      border-radius:50%; margin:auto; position:relative;
+      box-shadow:inset -3px -3px 6px rgba(0,0,0,0.1);
+    }
+    .hair {
+      position:absolute; top:0; left:0; width:55px; height:30px;
+      background:#6a4232;
+      border-radius:50% 50% 40% 40%;
+    }
+    .girl-eyes {
+      position:absolute; top:24px; left:50%; transform:translateX(-50%);
+      display:flex; gap:12px;
+    }
+    .girl-eyes .eye {
+      width:6px; height:6px; background:#333; border-radius:50%;
+    }
+    .smile {
+      position:absolute; bottom:12px; left:50%;
+      width:14px; height:8px;
+      border-bottom:2px solid #333;
+      border-radius:0 0 10px 10px;
+      transform:translateX(-50%);
+    }
+    .girl-body {
+      width:40px; height:80px; background:#ff9ff3;
+      border-radius:12px 12px 8px 8px;
+      margin:4px auto 0; position:relative;
+    }
+    .arm {
+      position:absolute; width:8px; height:30px;
+      background:#fcd5b5; top:10px; border-radius:4px;
+    }
+    .arm.left {
+      left:-8px; animation:wave 2s ease-in-out infinite alternate;
+    }
+    .arm.right { right:-8px; }
+    @keyframes wave {
+      0%{transform:rotate(0);}100%{transform:rotate(20deg);}
+    }
+    .leg {
+      position:absolute; bottom:-20px; width:8px; height:30px;
+      background:#5a95ff; border-radius:4px;
+    }
+    .leg.left { left:6px; } .leg.right { right:6px; }
+
+    /* Galería con contenido de ejemplo */
+    .gallery {
+      display:flex;justify-content:center;gap:12px;
+      flex-wrap:wrap;margin-bottom:40px;
+    }
+    .gallery-item {
+      width:80px; height:80px;
+      border-radius:12px; overflow:hidden;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      animation:pop .6s ease-in-out;
+      background-size:cover; background-position:center;
+    }
+    @keyframes pop {
+      0%{transform:scale(.8);opacity:0;}
+      100%{transform:scale(1);opacity:1;}
+    }
 
     /* Botón y confeti */
-    .btn{background:#ff4f7b;color:white;border:none;cursor:pointer;padding:10px 20px;font-size:1rem;border-radius:8px;margin-bottom:40px;}
-    .btn:active{transform:scale(.98);}
-    #confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;}
-
-    .message{
-      background:rgba(255,255,255,0.8);border-radius:16px;padding:25px;margin-top:40px;
-      max-width:600px;margin:auto;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,0.1);
+    .btn {
+      background:#ff4f7b; color:white; border:none;
+      cursor:pointer; padding:10px 20px; border-radius:8px;
+      margin-bottom:40px; font-size:1rem; box-shadow:0 4px 10px rgba(0,0,0,0.2);
     }
-    .message h2{font-family:'Dancing Script',cursive;font-size:2.2rem;color:#ff4f7b;margin-bottom:12px;}
-    .message p{font-size:1.1rem;line-height:1.5;}
+    .btn:active { transform:scale(.98); }
+    #confettiCanvas {
+      position:fixed; top:0; left:0; width:100%; height:100%;
+      pointer-events:none; z-index:9999;
+    }
 
+    /* Mensaje final */
+    .message {
+      background:rgba(255,255,255,0.8); border-radius:16px;
+      padding:25px; margin-top:40px; max-width:600px;
+      margin:auto; text-align:center;
+      box-shadow:0 4px 16px rgba(0,0,0,0.1);
+    }
+    .message h2 {
+      font-family:'Dancing Script',cursive; font-size:2.2rem;
+      color:#ff4f7b; margin-bottom:12px;
+    }
+    .message p {
+      font-size:1.1rem; line-height:1.5;
+    }
   </style>
 </head>
 <body>
-  <!-- Confeti -->
+  <!-- Canvas para confeti -->
   <canvas id="confettiCanvas"></canvas>
 
+  <!-- Título -->
   <h1 class="title">¡Feliz Cumpleaños!</h1>
 
+  <!-- Globos -->
   <div class="balloon-wall">
     <div class="balloon-letter"><div class="balloon">K</div></div>
     <div class="balloon-letter"><div class="balloon">E</div></div>
@@ -144,6 +283,7 @@
     <div class="balloon-letter"><div class="balloon">M</div></div>
   </div>
 
+  <!-- Mesa y pastel -->
   <div class="scene">
     <div class="table">
       <div class="table-leg"></div><div class="table-leg"></div>
@@ -157,6 +297,7 @@
     </div>
   </div>
 
+  <!-- Personajes -->
   <div class="characters">
     <!-- Perro 1 -->
     <div class="figure dog black">
@@ -182,60 +323,99 @@
         <div class="leg left"></div><div class="leg right"></div>
       </div>
     </div>
-    <!-- Perros 2 y 3 -->
-    <div class="figure dog white">... (igual estructura) ...</div>
-    <div class="figure dog white">... (igual estructura) ...</div>
+    <!-- Perro 2 -->
+    <div class="figure dog white">
+      <div class="dog-head">
+        <div class="dog-ears left"></div><div class="dog-ears right"></div>
+        <div class="dog-eyes"><div class="eye"></div><div class="eye"></div></div>
+        <div class="dog-snout"><div class="dog-nose"></div></div>
+      </div>
+      <div class="dog-body">
+        <div class="dog-tail"></div>
+        <div class="dog-paws"><div class="paw"></div><div class="paw"></div></div>
+      </div>
+    </div>
+    <!-- Perro 3 -->
+    <div class="figure dog white">
+      <div class="dog-head">
+        <div class="dog-ears left"></div><div class="dog-ears right"></div>
+        <div class="dog-eyes"><div class="eye"></div><div class="eye"></div></div>
+        <div class="dog-snout"><div class="dog-nose"></div></div>
+      </div>
+      <div class="dog-body">
+        <div class="dog-tail"></div>
+        <div class="dog-paws"><div class="paw"></div><div class="paw"></div></div>
+      </div>
+    </div>
   </div>
 
-  <!-- Galería opcional -->
+  <!-- Galería de fotos → reemplázalas con tus imágenes -->
   <div class="gallery">
-    <div class="gallery-item" style="background:#ffc0cb;"></div>
-    <div class="gallery-item" style="background:#ffb6c1;"></div>
+    <div class="gallery-item" style="background:#ffe0e6;"></div>
     <div class="gallery-item" style="background:#ffd1dc;"></div>
+    <div class="gallery-item" style="background:#ffdadd;"></div>
   </div>
 
-  <!-- Botón de interacción -->
+  <!-- Botón para reproducir canción y activar confeti -->
   <button class="btn" id="playBtn">Reproducir Canción</button>
 
+  <!-- Mensaje final -->
   <div class="message">
     <h2>¡Que tengas el mejor día, Kerdam!</h2>
-    <p>Esperamos que disfrutes muchísimo tu día especial rodeada del amor de tus tres adorables compañeros peludos. Que este nuevo año de vida esté repleto de aventuras increíbles, risas infinitas, momentos mágicos y toda la felicidad que mereces. ¡Que todos tus sueños se hagan realidad! 🎂✨🐕💖</p>
+    <p>
+      Esperamos que disfrutes muchísimo tu día especial rodeada del amor de tus tres adorables compañeros peludos. Que este nuevo año de vida esté repleto de aventuras increíbles, risas infinitas, momentos mágicos y toda la felicidad que mereces. ¡Que todos tus sueños se hagan realidad! 🎂✨🐕💖
+    </p>
   </div>
 
-  <!-- Audio en dominio público -->
+  <!-- Audio en dominio público (CC0) -->
   <audio id="birthdayAudio">
-    <source src="PATH_TO_YOUR_HAPPY_BIRTHDAY_IZIPODUO.mp3" type="audio/mpeg">
+    <source src="https://cdn.vox-cdn.com/uploads/chorus_asset/file/4076769/happy_birthday-midi.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    // Confeti simple
+    // Configuración CONFETI
     const canvas = document.getElementById('confettiCanvas');
     const ctx = canvas.getContext('2d');
     canvas.width = innerWidth; canvas.height = innerHeight;
-    const confetti = Array.from({length:100}, ()=>({
-      x: Math.random()*canvas.width,
-      y: Math.random()*canvas.height - canvas.height,
-      r: Math.random()*6+4,
-      d: Math.random()*50+50,
+    const confetti = Array.from({length:150}, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      r: Math.random()*6 + 4,
       color: `hsl(${Math.random()*360},70%,70%)`
     }));
-    function drawConfetti(){
-      ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       confetti.forEach(c => {
         ctx.beginPath();
-        ctx.arc(c.x, c.y, c.r, 0, Math.PI*2);
-        ctx.fillStyle = c.color; ctx.fill();
-        c.y += 2;
+        ctx.arc(c.x, c.y, c.r, 0, 2*Math.PI);
+        ctx.fillStyle = c.color;
+        ctx.fill();
+        c.y += 3;
         if (c.y > canvas.height) c.y = -10;
       });
       requestAnimationFrame(drawConfetti);
     }
-    drawConfetti();
 
-    // Ringtone control
     const audio = document.getElementById('birthdayAudio');
-    document.getElementById('playBtn').addEventListener('click',()=>{
-      if(audio.paused){ audio.play(); } else { audio.pause(); audio.currentTime=0; }
+    const btn = document.getElementById('playBtn');
+    let confettiOn = false;
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        btn.textContent = 'Pausar Canción';
+        if (!confettiOn) {
+          confettiOn = true;
+          drawConfetti();
+        }
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+        btn.textContent = 'Reproducir Canción';
+        confettiOn = false;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
     });
   </script>
 </body>
