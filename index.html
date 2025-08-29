@@ -6,7 +6,6 @@
   <title>¡Feliz Cumpleaños Kerdam!</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset general */
     * {
       margin: 0;
       padding: 0;
@@ -16,25 +15,23 @@
     body {
       min-height: 100vh;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(ellipse at top, #ff9a9e 0%, #fecfef 50%, #a8e6cf 100%);
+      background: radial-gradient(circle at top, #ff9a9e, #fecfef, #a8e6cf);
       overflow-x: hidden;
       position: relative;
+      text-align: center;
     }
 
-    /* Título */
-    .title {
+    h1.title {
       font-family: 'Dancing Script', cursive;
       font-size: 4rem;
       background: linear-gradient(45deg, #ff4757, #ff6b6b, #fd79a8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-align: center;
       margin-top: 180px;
-      animation: glow 3s infinite ease-in-out;
+      animation: pulse 3s ease-in-out infinite;
     }
 
-    @keyframes glow {
+    @keyframes pulse {
       0%, 100% { text-shadow: 0 0 10px rgba(255,71,87,0.5); }
       50% { text-shadow: 0 0 25px rgba(255,71,87,0.8); }
     }
@@ -56,7 +53,7 @@
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-15px); }
     }
 
     .balloon {
@@ -70,7 +67,7 @@
       font-size: 24px;
       color: white;
       position: relative;
-      box-shadow: inset -8px -12px 20px rgba(0,0,0,0.2);
+      box-shadow: inset -8px -12px 20px rgba(0,0,0,0.2), 0 10px 10px rgba(0,0,0,0.1);
     }
 
     .balloon::after {
@@ -89,31 +86,23 @@
     .balloon-a { background: #ffeaa7; }
     .balloon-m { background: #fd79a8; }
 
-    /* Container principal */
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      text-align: center;
-      position: relative;
-      z-index: 5;
+      padding-top: 60px;
     }
 
     .scene {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin-top: 60px;
+      position: relative;
     }
-
     /* Mesa */
     .table {
-      width: 300px;
+      width: 320px;
       height: 80px;
       background: #8b4513;
       border-radius: 12px;
       position: relative;
-      box-shadow: inset 0 5px 10px rgba(255,255,255,0.2), 0 10px 20px rgba(0,0,0,0.4);
+      margin: 0 auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     .table-leg {
@@ -121,50 +110,31 @@
       bottom: -50px;
       width: 20px;
       height: 50px;
-      background: #654321;
+      background: #5c3317;
       border-radius: 5px;
     }
 
-    .table-leg:nth-child(1) { left: 30px; }
-    .table-leg:nth-child(2) { right: 30px; }
+    .table-leg:first-child { left: 30px; }
+    .table-leg:last-child { right: 30px; }
 
     /* Pastel */
     .cake {
-      position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150px;
-      height: 120px;
-    }
-
-    .cake-base {
-      width: 100%;
-      height: 80px;
-      background: pink;
-      border-radius: 10px;
-      box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
-    }
-
-    .cake-top {
-      width: 120px;
-      height: 40px;
+      width: 100px;
+      height: 60px;
       background: #ffeaa7;
-      border-radius: 10px;
+      border-radius: 12px;
       position: absolute;
-      top: -30px;
+      top: -60px;
       left: 50%;
       transform: translateX(-50%);
+      box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
     }
 
     .candles {
       display: flex;
       justify-content: center;
-      gap: 8px;
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
+      gap: 5px;
+      margin-top: 8px;
     }
 
     .candle {
@@ -175,34 +145,34 @@
     }
 
     .flame {
-      width: 8px;
-      height: 12px;
-      background: radial-gradient(ellipse, #ffeb3b, #ff9800);
+      width: 6px;
+      height: 10px;
+      background: radial-gradient(ellipse, #ffeb3b 0%, #ff9800 80%);
       border-radius: 50%;
       position: absolute;
-      top: -15px;
+      top: -12px;
       left: 50%;
       transform: translateX(-50%);
-      animation: flame 0.8s infinite alternate ease-in-out;
+      animation: flame-dance 1s infinite alternate ease-in-out;
     }
 
-    @keyframes flame {
+    @keyframes flame-dance {
       0% { transform: translateX(-50%) scale(1); }
       100% { transform: translateX(-50%) scale(1.2); }
     }
 
     /* Personajes */
     .characters {
-      margin-top: 120px;
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap: 50px;
+      margin-top: 80px;
       flex-wrap: wrap;
     }
 
     .girl {
+      position: relative;
       width: 70px;
-      text-align: center;
     }
 
     .girl-head {
@@ -214,19 +184,20 @@
       position: relative;
     }
 
-    .girl-body {
+    .hair {
+      position: absolute;
+      top: 0;
       width: 60px;
-      height: 90px;
-      background: #ff9ff3;
-      border-radius: 30px 30px 10px 10px;
-      margin: 0 auto;
-      margin-top: -10px;
+      height: 40px;
+      background: #4a2c2a;
+      border-radius: 30px 30px 0 0;
+      z-index: 1;
     }
 
     .eye {
       width: 6px;
       height: 6px;
-      background: black;
+      background: #000;
       border-radius: 50%;
       position: absolute;
       top: 20px;
@@ -235,10 +206,64 @@
     .eye.left { left: 15px; }
     .eye.right { right: 15px; }
 
+    .smile {
+      position: absolute;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 8px;
+      border-bottom: 2px solid #000;
+      border-radius: 0 0 50px 50px;
+    }
+
+    .girl-body {
+      width: 50px;
+      height: 90px;
+      background: #ff9ff3;
+      border-radius: 30px 30px 10px 10px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .arm {
+      position: absolute;
+      width: 12px;
+      height: 40px;
+      background: #fdbcb4;
+      top: 10px;
+      border-radius: 10px;
+      transform-origin: top;
+    }
+
+    .arm.left {
+      left: -12px;
+      animation: wave 2s ease-in-out infinite;
+    }
+
+    .arm.right {
+      right: -12px;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(20deg); }
+    }
+
+    .leg {
+      width: 10px;
+      height: 30px;
+      background: #4a90e2;
+      border-radius: 5px;
+      margin: 5px 5px 0 5px;
+      display: inline-block;
+    }
+
     /* Perros */
     .dog {
       width: 60px;
       text-align: center;
+      animation: dog-wiggle 3s ease-in-out infinite;
     }
 
     .dog-head {
@@ -251,11 +276,20 @@
 
     .dog-body {
       width: 50px;
-      height: 60px;
+      height: 50px;
       background: #ddd;
       border-radius: 20px;
       margin: 0 auto;
       margin-top: -10px;
+    }
+
+    .dog .eye {
+      width: 5px;
+      height: 5px;
+      background: #000;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 2px;
     }
 
     .dog.black .dog-head,
@@ -263,36 +297,37 @@
       background: #444;
     }
 
-    .dog .eye {
-      width: 5px;
-      height: 5px;
-      background: white;
-      border-radius: 50%;
-      margin: 3px auto;
+    .dog.black .eye {
+      background: #fff;
+    }
+
+    @keyframes dog-wiggle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     /* Mensaje */
     .message {
-      background: rgba(255,255,255,0.95);
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       margin-top: 60px;
-      max-width: 600px;
+      max-width: 700px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      padding: 30px;
       margin-left: auto;
       margin-right: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
     .message h2 {
-      color: #ff4757;
       font-family: 'Dancing Script', cursive;
-      font-size: 2.5rem;
+      font-size: 2rem;
+      color: #ff4757;
       margin-bottom: 20px;
     }
 
     .message p {
+      font-size: 1.1rem;
       color: #2f3542;
-      font-size: 1.2rem;
       line-height: 1.6;
     }
   </style>
@@ -313,14 +348,11 @@
     <h1 class="title">¡Feliz Cumpleaños!</h1>
 
     <div class="scene">
-      <!-- Mesa y Pastel -->
+      <!-- Mesa y pastel -->
       <div class="table">
         <div class="table-leg"></div>
         <div class="table-leg"></div>
-
         <div class="cake">
-          <div class="cake-top"></div>
-          <div class="cake-base"></div>
           <div class="candles">
             <div class="candle"><div class="flame"></div></div>
             <div class="candle"><div class="flame"></div></div>
@@ -331,26 +363,46 @@
 
       <!-- Personajes -->
       <div class="characters">
+        <!-- Perro negro -->
         <div class="dog black">
-          <div class="dog-head"></div>
+          <div class="dog-head">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
           <div class="dog-body"></div>
         </div>
 
+        <!-- Chica -->
         <div class="girl">
           <div class="girl-head">
+            <div class="hair"></div>
             <div class="eye left"></div>
             <div class="eye right"></div>
+            <div class="smile"></div>
           </div>
-          <div class="girl-body"></div>
+          <div class="girl-body">
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="leg"></div>
+            <div class="leg"></div>
+          </div>
         </div>
 
+        <!-- Perro blanco 1 -->
         <div class="dog">
-          <div class="dog-head"></div>
+          <div class="dog-head">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
           <div class="dog-body"></div>
         </div>
 
+        <!-- Perro blanco 2 -->
         <div class="dog">
-          <div class="dog-head"></div>
+          <div class="dog-head">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
           <div class="dog-body"></div>
         </div>
       </div>
